@@ -28,17 +28,20 @@
     }
   </style>
   <script>
-    // Auto-refresh the page every 30 seconds
-    setInterval(() => {
-      window.location.reload();
-    }, 6000); // 30000 ms = 30 seconds
-    
+    function refreshIframe() {
+      const iframe = document.getElementById('googleGraph');
+      const uniqueParam = new Date().getTime() + Math.random().toString(36).substring(7);
+      iframe.src = `https://docs.google.com/spreadsheets/d/e/2PACX-1vRoAE4W07BrA7y04h6Htx9_ODyKVgL6l2OEGM0Q5_8IFSma3orl4QsPgKqpnGebzmfRH2UIMcyZeNMI/pubchart?oid=2072771415&format=interactive&cachebuster=${uniqueParam}`;
+    }
+
+    // Refresh the iframe every 5 seconds
+    setInterval(refreshIframe, 5000); // 5000 ms = 5 seconds
   </script>
 </head>
 <body>
   <div class="container">
     <h2>My Google Sheet Graph</h2>
-    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRoAE4W07BrA7y04h6Htx9_ODyKVgL6l2OEGM0Q5_8IFSma3orl4QsPgKqpnGebzmfRH2UIMcyZeNMI/pubchart?oid=2072771415&format=interactive&cachebuster=" + new Date().getTime()></iframe>
+    <iframe id="googleGraph" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRoAE4W07BrA7y04h6Htx9_ODyKVgL6l2OEGM0Q5_8IFSma3orl4QsPgKqpnGebzmfRH2UIMcyZeNMI/pubchart?oid=2072771415&format=interactive"></iframe>
   </div>
 </body>
 </html>
