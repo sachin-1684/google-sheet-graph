@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Sheet Graph</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f9;
+    }
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    h2 {
+      text-align: center;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+  <script>
+    // Auto-refresh the page every 30 seconds
+    
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>My Google Sheet Graph</h2>
+    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRoAE4W07BrA7y04h6Htx9_ODyKVgL6l2OEGM0Q5_8IFSma3orl4QsPgKqpnGebzmfRH2UIMcyZeNMI/pubchart?oid=2072771415&format=interactive&cachebuster=" + new Date().getTime()></iframe>
+  </div>
+</body>
+</html>
